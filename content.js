@@ -1,6 +1,5 @@
 window.addEventListener('load', function(){
-	const config = {childList: true}; // errors if we don't pr ovide at least one option
-	//const ytSkipButton = document.querySelector(".ytp-ad-skip-button");
+	const config = {childList: true}; // errors if we don't provide at least one option
 	const ytVideoAdContainer = document.querySelector(".video-ads.ytp-ad-module");
 	const observer = new MutationObserver(function(mutations){
 		mutations.forEach(function(mutation){
@@ -15,6 +14,7 @@ window.addEventListener('load', function(){
 		});
 	});
 
+	// if main ads container found, initiate observer else disconnect
 	if ( ytVideoAdContainer ){
 		observer.observe(ytVideoAdContainer, config);
 	}
