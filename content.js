@@ -3,13 +3,8 @@ window.addEventListener('load', function(){
 	const ytVideoAdContainer = document.querySelector(".video-ads.ytp-ad-module");
 	const observer = new MutationObserver(function(mutations){
 		mutations.forEach(function(mutation){
-			console.log("Button: " + document.querySelector(".ytp-ad-skip-button"))	
 			if ( document.querySelector(".ytp-ad-skip-button") ){
-				console.log("Found skip button");
 				document.querySelector(".ytp-ad-skip-button").click();
-			}
-			else{
-				console.log("Button not found.");
 			}
 		});
 	});
