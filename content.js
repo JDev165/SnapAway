@@ -5,16 +5,23 @@ window.addEventListener('load', function(){
 		if( mutations.length > 0){
 			if ( document.querySelector(".ytp-ad-skip-button") ){
 				document.querySelector(".ytp-ad-skip-button").click();
+				sendMessageToBackgroundScript();
 			}
 		}
 	});
 
-	// if main ads container found, initiate observer else disconnect
+	function sendMessageToBackgroundScript(){
+		const messageObj = {message: "triggerNotification"};
+		chrome.runtime.sendMessage(messageObj);
+	}
+
+		// if main ads container found, initiate observer else disconnect
 	if ( ytVideoAdContainer ){
 		observer.observe(ytVideoAdContainer, config);
 	}
 	else{
 		observer.disconnect();
-	}	
+	}		
+
 });
 
