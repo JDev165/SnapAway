@@ -7,7 +7,6 @@
     	"48": "images/hands-ok-48.png",
     	"16": "images/hands-ok-16.png"
     },
-    "permissions": ["tabs", "https://www.youtube.com/*"],
     "background": {
       "scripts": ["background.js"],
       "persistent": false
@@ -20,7 +19,7 @@
     	{
     		"matches": ["https://www.youtube.com/*"],
     		"js": ["content.js"],
-    		"run_at":    "document_start"
+    		"run_at": "document_start"
     	}
     ]
   }
