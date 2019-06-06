@@ -9,5 +9,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 		}
 		
 		chrome.notifications.create('skipped-notifiction', notificationOptions);
+
+		sendResponse({status: "Success"});
+
 	}
 });

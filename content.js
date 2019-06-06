@@ -9,7 +9,7 @@ window.addEventListener('load', function(){
 			if ( document.getElementsByClassName("ytp-ad-skip-button-icon")[0] && document.getElementsByClassName("ytp-ad-skip-button")[0] ){
 				document.getElementsByClassName("ytp-ad-skip-button")[0].click();
 				sendMessageToBackgroundScript();
-				console.log("Found button and clicked!");
+				// console.log("Found button and clicked!");
 			}
 		}
 	});
@@ -17,8 +17,8 @@ window.addEventListener('load', function(){
 	function sendMessageToBackgroundScript(){
 		const messageObj = {message: "skipped-notification"};
 		chrome.runtime.sendMessage(messageObj, function(response){
-			console.log(response);
-		});
+			// console.log(response);
+		});			
 	}
 
 		// if main ads container found, initiate observer else disconnect
